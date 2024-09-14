@@ -1,214 +1,322 @@
-body{
-    font-family: "Poppins", sans-serif;
-    margin: 20px;
-    padding: 0;
-    background-color: #f4f7f6;
-    color: #333;
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Root Variables for Easy Theme Management */
+:root {
+  --primary-color: #008080; /* Teal */
+  --secondary-color: #FF6F61; /* Coral */
+  --background-color: #f5f7fa; /* Light Gray-Blue */
+  --text-color: #333333; /* Dark Gray */
+  --heading-color: #004d4d; /* Dark Teal */
+  --border-color: #dfe1e5; /* Light Border */
+  --input-bg: #ffffff; /* White */
+  --button-hover: #006666; /* Darker Teal */
+  --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
-h1{
-    text-align: center;
-    color: #2c3e50; 
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 40px;
-    letter-spacing: 1px;
+/* Body and General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
- form{
-    max-width: 700px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
-    padding: 30px;
-    border-top: 5px solid #e74c3c; 
- }
+h1 {
+  text-align: center;
+  color: var(--heading-color);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+}
 
- fieldset{
-    border: none;
-    padding: 0;
-    margin-bottom: 30px;
- }
+/* Form Styling */
+form {
+  max-width: 750px;
+  margin: 0 auto;
+  background-color: var(--input-bg);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px var(--shadow-color);
+  padding: 35px;
+  border-top: 4px solid var(--primary-color);
+}
 
- legend {
-    font-weight: 700;
-    color: #34495e;
-    font-size: 1.3rem;
-    border-bottom: 2px solid #e74c3c;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-    display: block;
+fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+legend {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--border-color);
+  display: block;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  display: block;
+  color: var(--text-color);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px 14px;
+  margin-top: 4px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: #fafafa;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+/* Resume Output Styling */
+#resumeOutput {
+  max-width: 750px;
+  margin: 40px auto;
+  padding: 30px;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px var(--shadow-color);
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
+}
+
+#resumeOutput h2 {
+  text-align: center;
+  color: var(--heading-color);
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+#resumeOutput h3 {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 5px;
+  position: relative;
+}
+
+#resumeOutput h3::before {
+  content: "➤";
+  color: var(--secondary-color);
+  margin-right: 8px;
+  position: absolute;
+  left: -25px;
+  top: 0;
+}
+
+#resumeOutput p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+#resumeOutput ul {
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+#resumeOutput ul li {
+  font-size: 1rem;
+  color: var(--text-color);
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 10px;
+}
+
+#resumeOutput ul li::before {
+  content: "✔️";
+  color: var(--secondary-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1rem;
+}
+
+/* Editable Area Styling */
+.editable {
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  background-color: #f4f6f8;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.editable:hover {
+  background-color: #e0f7fa;
+}
+
+button.edit {
+  max-width: 200px;
+  margin: 15px auto 0 auto;
+  padding: 10px 0;
+  background-color: var(--secondary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.edit:hover {
+  background-color: #e55d50;
+  transform: translateY(-2px);
+}
+
+/* Existing styles... */
+
+/* Responsive Design - Mobile First Approach */
+@media (max-width: 768px) {
+  /* Body */
+  body {
+    padding: 10px;
   }
 
-  label {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    display: block;
-    color: #34495e; 
+  /* Heading */
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  /* Form */
+  form {
+    padding: 25px;
   }
 
   input[type="text"],
   input[type="email"],
   input[type="tel"],
   textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 6px;
-    border-radius: 8px;
-    border: 2px solid #bdc3c7;
-    box-sizing: border-box;
-    background-color: #ecf0f1;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+    font-size: 0.9rem;
   }
 
   button {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 12px;
   }
 
-  input:focus,
-  textarea:focus {
-    border-color: #e74c3c;
-    outline: none;
-    box-shadow: 0 0 8px rgba(231, 76, 60, 0.3); 
-  }
-  
-    
-  button:hover {
-    background-color: #c0392b; 
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-
+  /* Resume Output */
   #resumeOutput {
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 30px;
-    border: 2px solid #e74c3c; 
-    border-radius: 12px;
-    background-color: #ffffff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
-    color: #2c3e50;
-    font-family: "Poppins", sans-serif;
+    padding: 20px;
+    margin: 20px auto;
   }
 
   #resumeOutput h2 {
-    text-align: center;
-    color: #2c3e50; 
-    font-size: 2rem;
-    margin-bottom: 20px;
-    font-weight: 700; 
-    letter-spacing: 1px;
+    font-size: 1.8rem;
   }
-  
-  
+
   #resumeOutput h3 {
-    color: #e74c3c; 
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #bdc3c7; 
-    padding-bottom: 8px;
-    display: flex;
-    align-items: center;
-  }
-  
-  
-  #resumeOutput h3::before {
-    content: "✧";
-    color: #e74c3c;
-    margin-right: 10px;
     font-size: 1.2rem;
   }
-  
-  
-  #resumeOutput p {
-    font-size: 1.1rem;
-    margin: 10px 0;
-    line-height: 1.8;
-    color: #333; 
-  }
-  
-  
-  #resumeOutput ul {
-    padding-left: 20px;
-  }
-  
+
+  #resumeOutput p,
   #resumeOutput ul li {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    color: #555;
-    position: relative;
-    padding-left: 20px;
-  }
-  
-  #resumeOutput ul li::before {
-    content: "•";
-    color: #e74c3c; 
-    position: absolute;
-    left: 0;
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
-  
-  
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2rem;
-    }
-  
-    button {
-      font-size: 1rem;
-      padding: 12px;
-    }
-  
-    #resumeOutput {
-      padding: 20px;
-    }
-  
-    #resumeOutput h2 {
-      font-size: 1.6rem;
-    }
-  
-    #resumeOutput h3 {
-      font-size: 1.2rem;
-    }
-  
-    #resumeOutput p {
-      font-size: 1rem;
-    }
+    font-size: 0.9rem;
   }
 
-  #editButton {
-    background-color: lightcoral;
-    color:white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    cursor:pointer;
-    font-size: 16px;
-  width: 50%;
-  display: inline-block;
-  margin: 0 auto;
- 
-   
+  /* Editable Area */
+  .editable {
+    font-size: 0.9rem;
+    padding: 6px 10px;
   }
 
-  .button-container{
-    text-align: center;
+  button.edit {
+    font-size: 0.9rem;
+    padding: 8px 0;
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for smaller screens like mobile */
+  h1 {
+    font-size: 1.7rem;
   }
 
-  #editButton.clicked{
-    background-color: grey;
+  form {
+    padding: 15px;
   }
+
+  button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Resume Output */
+  #resumeOutput h2 {
+    font-size: 1.5rem;
+  }
+
+  #resumeOutput h3 {
+    font-size: 1rem;
+  }
+
+  #resumeOutput p,
+  #resumeOutput ul li {
+    font-size: 0.8rem;
+  }
+}
+
+/* Responsive Design - Larger screens */
+@media (min-width: 1024px) {
+  /* For larger screens */
+  form {
+    max-width: 900px;
+  }
+
+  #resumeOutput {
+    max-width: 900px;
+  }
+
+  /* Adjusting padding for large screens */
+  button {
+    padding: 16px;
+  }
+}
+
